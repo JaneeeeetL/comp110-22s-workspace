@@ -1,3 +1,4 @@
+"""My structured WORDLE!!!"""
 __author__ = str("730401522")
 
 
@@ -36,27 +37,27 @@ def emojified(guess: str, secret: str) -> str:
         
     
 def input_guess(n: int) -> str:
-    length: str = input(f"Enter a {n} character word: ")
-    while len(length) != n:
-        length: str = input(f"That wasn't {n} chars! Try again: ")
-    return length
+    """Ask the user to input a word for the game."""
+    word: str = input(f"Enter a {n} character word: ")
+    while len(word) != n:
+        word = input(f"That wasn't {n} chars! Try again: ")
+    return word
     
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     turns: int = 1
     won: bool = False
-    n: int = 5
     secret: str = "codes"
     while turns <= 6 and won is False:
         print(f"=== Turn {turns}/6 ===")
-        guess: str = input_guess(n)
+        guess: str = input_guess(5)
         print(emojified(guess, secret))
         if guess == secret:
             won = True
             print(f"You won in {turns}/6 turns!")
         turns += 1
-    if turns > 6 and won is False:
+    if turns > 6:
         print("X/6 - Sorry, try again tomorrow!")
 
 
