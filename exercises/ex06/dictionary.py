@@ -6,9 +6,11 @@ def invert(a: dict[str, str]) -> dict[str, str]:
     """Inverts the keys and the values."""
     result: dict[str, str]
     result = dict()
-    
     for key in a:
-        result[a[key]] = key
+        if a[key] in result:
+            raise KeyError("KeyError")
+        else:
+            result[a[key]] = key
     return result
 
 
@@ -17,7 +19,7 @@ def favorite_color(b: dict[str, str]) -> str:
     result: dict[str, int]
     result = dict()
     for key in b:
-        if key in result:
+        if b[key] in result:
             result[b[key]] += 1
         else:
             result[b[key]] = 1

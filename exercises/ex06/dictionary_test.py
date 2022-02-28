@@ -3,6 +3,7 @@ __author__: str = "730401522"
 
 from dictionary import invert, favorite_color, count
 
+
 def test_invert_empty() -> None:
     """Test for invert."""
     a: dict[str, str]
