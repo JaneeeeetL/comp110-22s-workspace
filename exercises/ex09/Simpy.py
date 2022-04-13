@@ -10,6 +10,7 @@ __author__ = "730401522"
 
 
 class Simpy:
+    """An object of EX09."""
     values: list[float]
 
     # TODO: Your constructor and methods will go here.
@@ -29,8 +30,7 @@ class Simpy:
             self.values.append(nums_f)
         
     def arange(self, start: float, stop: float, step: float = 1.0) -> None:
-        """This method fills the empty Simpy object with values within"""
-        """a specific range with certain steps."""
+        """This method fills the empty Simpy object with values within a specific range with certain steps."""
         assert step != 0.0
         i: int = 0
         n: float = (stop - start) / step
@@ -45,7 +45,7 @@ class Simpy:
         return sum(self.values)
 
     def __add__(self, rhs: Union[Simpy, float]) -> Simpy:
-        """adds two sides together."""
+        """Adds two sides together."""
         if isinstance(rhs, Simpy):
             result: list[float] = []
             for i in range(0, len(self.values)):
@@ -58,7 +58,7 @@ class Simpy:
             return Simpy(result)
 
     def __pow__(self, rhs: Union[Simpy, float]) -> Simpy:
-        """raises one side to the power of other side."""
+        """Raises one side to the power of other side."""
         if isinstance(rhs, Simpy):
             result: list[float] = []
             for i in range(0, len(self.values)):
@@ -71,7 +71,7 @@ class Simpy:
             return Simpy(result)
     
     def __eq__(self, rhs: Union[Simpy, float]) -> list[bool]:
-        """checks equality of two sides."""
+        """Checks equality of two sides."""
         if isinstance(rhs, Simpy):
             result: list[bool] = []
             for i in range(0, len(self.values)):
@@ -92,7 +92,7 @@ class Simpy:
             return result
     
     def __gt__(self, rhs: Union[Simpy, float]) -> list[bool]:
-        """checks 'greater than' of two sides."""
+        """Checks 'greater than' of two sides."""
         if isinstance(rhs, Simpy):
             result: list[bool] = []
             for i in range(0, len(self.values)):
@@ -113,6 +113,7 @@ class Simpy:
             return result
     
     def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """A method that helps with filtering values."""
         if isinstance(rhs, int):
             i: int = 0
             while i < len(self.values):
