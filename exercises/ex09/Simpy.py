@@ -1,9 +1,6 @@
 """Utility class for numerical operations."""
 
 from __future__ import annotations
-from optparse import Values
-from types import UnionType
-
 from typing import Union
 
 __author__ = "730401522"
@@ -128,30 +125,3 @@ class Simpy:
                     result.append(self.values[i])
                 i += 1
             return Simpy(result)
-        
-
-    # def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
-    #     """overloading method of __getitem__."""
-    #     result: list[float] = []
-    #     if isinstance(rhs, int):
-    #         mask_i: int = rhs
-    #         for item in self.values:
-    #             if item > mask_i:
-    #                 result.append(item)
-    #     else:
-    #         mask_b = rhs
-    #         i: int = 0
-    #         while i < len(mask_b):
-    #             if mask_b[i]:
-    #                 result.append(self.values[i])
-    #             i += 1
-    #         # for item in self.values:
-    #         #     index: int = item
-    #         #     if mask_b[index] == True:
-    #         #         result.append(self[item])
-    #         return result
-    #     return Simpy(result)
-
-            
-            
-            
